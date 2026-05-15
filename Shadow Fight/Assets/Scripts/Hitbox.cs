@@ -17,7 +17,7 @@ public class Hitbox : MonoBehaviour
             if (enemyHealth != null)
             {
                 
-                enemyHealth.TakeDamage(damage);
+                enemyHealth.TakeDamage(damage,transform.parent);
             }
         }
     }

@@ -996,7 +996,7 @@ Transform:
   m_GameObject: {fileID: 1054937960}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 0.099, z: 0}
+  m_LocalPosition: {x: 0.322, y: 0.099, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1089,7 +1089,7 @@ Transform:
   m_GameObject: {fileID: 1074754628}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.285, y: 0.048806667, z: 0}
+  m_LocalPosition: {x: 0.351, y: 0.048806667, z: 0}
   m_LocalScale: {x: -0.33333334, y: 0.33333334, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1265,7 +1265,7 @@ Animator:
   m_GameObject: {fileID: 1397855959}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 8727342847b4be247abb862e66810a62, type: 2}
+  m_Controller: {fileID: 9100000, guid: ddd5fb48327eaeb4fbb20831e97f6852, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1323,7 +1323,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &1397855964
@@ -1375,7 +1375,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 0b2c7852577c02d49a58074437cd597b, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: ae36428fa7dfeaf4a9c49fe1d14bc13b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1453,7 +1453,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.38, y: 0.8}
+    oldSize: {x: 0.32, y: 0.82}
     newSize: {x: 0.32, y: 0.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1676,7 +1676,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &1826226666
