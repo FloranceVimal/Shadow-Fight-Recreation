@@ -50,7 +50,6 @@ public class Movement : MonoBehaviour
 
         
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
-        
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
         anim.SetBool("IsGrounded", IsGrounded());
 
