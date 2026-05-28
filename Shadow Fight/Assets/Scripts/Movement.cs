@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     public KeyCode rightKey = KeyCode.D;
     public KeyCode jumpKey = KeyCode.W;
     public KeyCode attackKey = KeyCode.F;
+    public KeyCode blockKey=KeyCode.Q;
     
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -21,6 +22,7 @@ public class Movement : MonoBehaviour
     
     private float moveInput;
     private bool isFacingRight = true;
+    public bool isBlocking = false;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         moveInput = 0f; 
+        isBlocking = Input.GetKey(blockKey);
         
         if (Input.GetKey(leftKey)) 
         {
@@ -43,7 +46,7 @@ public class Movement : MonoBehaviour
         }
         //slide attack fix
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.IsName("Attack"))
+        if (stateInfo.IsName("Attack")|| isBlocking)
         {
             moveInput = 0f;
         }
@@ -52,6 +55,7 @@ public class Movement : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
         anim.SetBool("IsGrounded", IsGrounded());
+        anim.SetBool("IsBlocking", isBlocking);
 
         Flip();
 

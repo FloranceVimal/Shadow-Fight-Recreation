@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639123572299803624
-    m_Hash: 3440636163
+      ticks: 639147719733528621
+    m_Hash: 3894277642
   m_LockFileStatus:
     m_FilePath: D:/Study/Shadow Fight/Shadow Fight/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639123572299827642
-    m_Hash: 796511249
+      ticks: 639147719733528621
+    m_Hash: 2239367094
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -189,17 +189,21 @@ m_ResolvedPackages:
     - 13.0.2
     - 13.0.3
     - 13.0.4
+    - 13.0.5
     - 14.0.0
     - 14.0.1
     - 14.0.2
     - 14.0.3
+    - 14.0.4
     - 15.0.0
     - 15.0.1
     - 15.0.2
     - 15.0.3
+    - 15.1.0
     compatible:
     - 13.0.4
-    recommended: 13.0.4
+    - 13.0.5
+    recommended: 13.0.5
     deprecated: []
   dependencies:
   - name: com.unity.2d.common
@@ -360,14 +364,18 @@ m_ResolvedPackages:
     - 2.0.2
     - 3.0.0
     - 3.0.1
+    - 3.0.2
     - 4.0.0
     - 4.0.1
+    - 4.0.2
     - 5.0.0
     - 5.0.1
     - 5.0.2
+    - 5.0.3
     compatible:
     - 3.0.1
-    recommended: 3.0.1
+    - 3.0.2
+    recommended: 3.0.2
     deprecated: []
   dependencies:
   - name: com.unity.2d.common
@@ -602,15 +610,19 @@ m_ResolvedPackages:
     - 11.0.2
     - 12.0.0
     - 12.0.1
+    - 12.0.2
     - 13.0.0
     - 13.0.1
     - 13.0.2
+    - 13.0.3
     - 14.0.0
     - 14.0.1
     - 14.0.2
+    - 14.0.3
     compatible:
     - 12.0.1
-    recommended: 12.0.1
+    - 12.0.2
+    recommended: 12.0.2
     deprecated: []
   dependencies:
   - name: com.unity.2d.common
@@ -942,6 +954,7 @@ m_ResolvedPackages:
     - 15.0.0
     - 15.0.1
     - 15.0.2
+    - 15.0.3
     compatible:
     - 13.0.0
     recommended: 13.0.0
@@ -1251,6 +1264,7 @@ m_ResolvedPackages:
     - 5.0.2
     - 6.0.0
     - 6.0.1
+    - 6.0.2
     - 7.0.0-exp.1
     - 7.0.0
     - 7.0.1
@@ -1258,10 +1272,12 @@ m_ResolvedPackages:
     - 8.0.0
     - 8.0.1
     - 8.0.2
+    - 8.0.3
     - 8.88.0-exp.1
     compatible:
     - 6.0.1
-    recommended: 6.0.1
+    - 6.0.2
+    recommended: 6.0.2
     deprecated: []
   dependencies:
   - name: com.unity.2d.tilemap
@@ -1380,12 +1396,16 @@ m_ResolvedPackages:
     - 1.0.0
     - 1.0.1
     - 1.0.2
+    - 1.0.3
     - 2.0.0
     - 2.0.1
+    - 2.0.2
     - 3.0.0
+    - 3.0.1
     compatible:
     - 1.0.2
-    recommended: 1.0.2
+    - 1.0.3
+    recommended: 1.0.3
     deprecated: []
   dependencies:
   - name: com.unity.2d.common
@@ -7122,12 +7142,16 @@ m_ResolvedPackages:
     - 12.0.0
     - 12.0.1
     - 12.0.2
+    - 12.0.3
     - 13.0.0
     - 13.0.1
+    - 13.0.2
     - 14.0.0
+    - 14.0.1
     compatible:
     - 12.0.2
-    recommended: 12.0.2
+    - 12.0.3
+    recommended: 12.0.3
     deprecated: []
   dependencies:
   - name: com.unity.burst
@@ -7451,12 +7475,14 @@ m_ResolvedPackages:
     - 2.6.3
     - 2.6.4
     - 2.6.5
+    - 2.6.6
     compatible:
     - 2.6.2
     - 2.6.3
     - 2.6.4
     - 2.6.5
-    recommended: 2.6.5
+    - 2.6.6
+    recommended: 2.6.6
     deprecated: []
   dependencies:
   - name: com.unity.burst
@@ -8086,12 +8112,16 @@ m_ResolvedPackages:
     - 3.3.0
     - 3.4.0
     - 3.4.1
+    - 3.4.2
+    - 3.5.0
     compatible:
     - 3.2.0
     - 3.2.1
     - 3.3.0
     - 3.4.0
     - 3.4.1
+    - 3.4.2
+    - 3.5.0
     recommended: 3.2.1
     deprecated: []
   dependencies:

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Health player2Health;
 
     private bool matchActive = true;
+    private bool isMatchOver = false;
 
     void Start()
     {
@@ -33,6 +35,14 @@ public class GameManager : MonoBehaviour
             {
                 matchTime = 0;
                 TimeUp();
+            }
+        }
+        if (isMatchOver)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                // Reload the exact scene we are currently in!
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
@@ -76,11 +86,26 @@ public class GameManager : MonoBehaviour
     private void EndMatch(string message)
     {
         // 1. Show the giant text
-        centerText.text = message;
+        centerText.text = message + "\n\nPress 'R' to Rematch";
         centerText.gameObject.SetActive(true);
         
-        // 2. Shut off both players' brains so they stop fighting
+        // 2. Force stop any hit-stun timers so they don't revive dead players!
+        player1Health.StopAllCoroutines();
+        player2Health.StopAllCoroutines();
+        
+        // 3. Shut off human brains
         player1Health.GetComponent<Movement>().enabled = false;
         player2Health.GetComponent<Movement>().enabled = false;
+
+        // 4. Shut off Zombie brains (if they exist)
+        if (player1Health.GetComponent<ZombieAI>() != null) 
+        {
+            player1Health.GetComponent<ZombieAI>().enabled = false;
+        }
+        if (player2Health.GetComponent<ZombieAI>() != null) 
+        {
+            player2Health.GetComponent<ZombieAI>().enabled = false;
+        }
+        isMatchOver = true;
     }
 }

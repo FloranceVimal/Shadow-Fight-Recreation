@@ -36,6 +36,17 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damageAmount,Transform attacker)
     {
         currentHealth -= damageAmount;
+        Movement moveScript = GetComponent<Movement>();
+        if (moveScript != null && moveScript.isBlocking)
+        {
+            Debug.Log(gameObject.name + " BLOCKED the attack!");
+            
+            // Still push them backward a tiny bit for impact, but don't deal damage!
+            float guardKnockbackDir = attacker.position.x < transform.position.x ? 1f : -1f;
+            StartCoroutine(KnockbackRoutine(guardKnockbackDir * 0.5f)); 
+            
+            return; // This completely stops the rest of the damage code from running!
+        }
         
         Debug.Log(gameObject.name + " took " + damageAmount + " damage! Health left: " + currentHealth);
         UpdateHealthBar();
@@ -50,20 +61,7 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-    private IEnumerator KnockbackRoutine(float direction)
-    {
-        // 1. Turn OFF the player's ability to move (Hit Stun!)
-        movementScript.enabled = false;
-
-        // 2. Shove them backward and slightly up into the air
-        rb.linearVelocity = new Vector2(direction * knockbackForce, knockbackForce / 2f);
-
-        // 3. Wait for the knockback time to finish (e.g., 0.2 seconds)
-        yield return new WaitForSeconds(knockbackTime);
-
-        // 4. Turn the player's movement back ON so they can fight back
-        movementScript.enabled = true;
-    }
+    
 
     private IEnumerator FlashRoutine()
     {
@@ -93,5 +91,28 @@ public class Health : MonoBehaviour
             // We use (float) to force Unity to do decimal math instead of whole numbers!
             healthBar.fillAmount = (float)currentHealth / maxHealth;
         }
+    }
+
+    private IEnumerator KnockbackRoutine(float direction)
+    {
+        ZombieAI aiScript = GetComponent<ZombieAI>();
+        bool wasHuman = movementScript.enabled;
+        bool wasZombie = (aiScript != null && aiScript.enabled);
+
+        movementScript.enabled = false;
+        if (aiScript != null) aiScript.enabled = false;
+
+        rb.linearVelocity = new Vector2(direction * knockbackForce, knockbackForce / 2f);
+
+        // Wait for the knockback time to finish
+        yield return new WaitForSeconds(knockbackTime);
+
+        // --- NEW: THE DEATH CHECK ---
+        // If this hit killed us, stop the code right here! Do not revive!
+        if (currentHealth <= 0) yield break;
+
+        // Give control back to the CORRECT brain!
+        if (wasHuman) movementScript.enabled = true;
+        if (wasZombie) aiScript.enabled = true;
     }
 }
